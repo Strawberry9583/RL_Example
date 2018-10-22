@@ -6,6 +6,15 @@
 *.lo
 *.o
 *.obj
+*.iobj
+*.ipdb
+*.pdb
+*.ilk
+*.log
+*.tlog
+*.enc
+
+
 
 # Precompiled Headers
 *.gch
@@ -15,6 +24,7 @@
 *.so
 *.dylib
 *.dll
+*.ipch
 
 # Fortran module files
 *.mod
@@ -30,3 +40,6 @@
 *.exe
 *.out
 *.app
+
+# Data base
+.db
