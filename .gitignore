@@ -13,6 +13,9 @@
 *.log
 *.tlog
 *.enc
+*.idb
+*.suo
+*.VC.db
 
 
 
