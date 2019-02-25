@@ -1,45 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="problem">
+      <UniqueIdentifier>{8d49ebd2-b633-4f83-9cd6-57205abff8d4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="definition">
+      <UniqueIdentifier>{f0a71e4a-a038-4d58-9104-d8c653bb554c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="资源文件">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="run">
+      <UniqueIdentifier>{aa20e243-98c3-4925-a9c9-8c789029a3b8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\problem">
-      <UniqueIdentifier>{ee04c43d-5600-4173-8327-2a62b7fbbc93}</UniqueIdentifier>
+    <Filter Include="update_alg">
+      <UniqueIdentifier>{b0b46586-8128-4939-a16c-0c84a22e2301}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\model">
-      <UniqueIdentifier>{ababbe53-9c25-426d-b727-5d2842ee99ff}</UniqueIdentifier>
+    <Filter Include="model">
+      <UniqueIdentifier>{541ca7f1-988f-4e2e-905d-01fbfbea3a91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="choose_alg">
+      <UniqueIdentifier>{0e62576f-53b4-4d09-97f4-e0b6457e4a7d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="definition.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
     <ClInclude Include="model\model_base.h">
-      <Filter>源文件\model</Filter>
-    </ClInclude>
-    <ClInclude Include="problem\maze.h">
-      <Filter>源文件\problem</Filter>
+      <Filter>model</Filter>
     </ClInclude>
     <ClInclude Include="model\simple_model.h">
-      <Filter>源文件\model</Filter>
+      <Filter>model</Filter>
+    </ClInclude>
+    <ClInclude Include="problem\maze.h">
+      <Filter>problem</Filter>
+    </ClInclude>
+    <ClInclude Include="definition\definition.h">
+      <Filter>definition</Filter>
+    </ClInclude>
+    <ClInclude Include="problem\problem_base.h">
+      <Filter>problem</Filter>
+    </ClInclude>
+    <ClInclude Include="model\base.h">
+      <Filter>model</Filter>
+    </ClInclude>
+    <ClInclude Include="update_alg\updata_base.h">
+      <Filter>update_alg</Filter>
+    </ClInclude>
+    <ClInclude Include="choose_alg\epsilon_greedy.h">
+      <Filter>choose_alg</Filter>
+    </ClInclude>
+    <ClInclude Include="update_alg\td_update_base.h">
+      <Filter>update_alg</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="problem\maze.cpp">
-      <Filter>源文件\problem</Filter>
+      <Filter>problem</Filter>
     </ClCompile>
-    <ClCompile Include="model\simple_model.cpp">
-      <Filter>源文件\model</Filter>
+    <ClCompile Include="run\main.cpp">
+      <Filter>run</Filter>
+    </ClCompile>
+    <ClCompile Include="choose_alg\eplison_greedy.cpp">
+      <Filter>choose_alg</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

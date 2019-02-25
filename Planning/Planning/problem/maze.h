@@ -1,28 +1,40 @@
-#include"../definition.h"
+#ifndef maze_h
+#define maze_h
+
+#include"problem_base.h"
+#include"../definition/definition.h"
 #include<vector>
 #include<string>
 #include<map>
 #include<algorithm>
+#include<iostream>
+
 using namespace std;
 
-class maze {
+class maze :public problem_base<MAZE_STATE_TYPE,MAZE_ACTION_TYPE> {
 public:
 	maze();
 	~maze();
-	const pair<int, int> & goal() { return m_goal; }
-	const pair<int, int> & start() { return m_start; }
-	pair<int,int>  move(const pair<int,int> & state, MAZE_ACTION_TYPE action);
+	const MAZE_STATE_TYPE & goal() { return m_goal; }
+	const MAZE_STATE_TYPE & start() { return m_start; }
+	pair<MAZE_STATE_TYPE,double>  next_state(const MAZE_STATE_TYPE  & state, const MAZE_ACTION_TYPE & action);
+	void reset_obstacle(const vector<pair<int, int>> & obstacle);
+	void print_maze();
+
 private:
 	//the maze size;
-	int m_width=9;
-	int m_height=6;
+	int m_width = 9;
+	int m_height = 6;
 	//the start&end point of the maze;
-	pair<int,int> m_start = { 2,0 };
-	pair<int,int> m_goal = { 0,8 };
-	vector<MAZE_ACTION_TYPE> m_actions = 
-		{MAZE_ACTION_TYPE::UP,MAZE_ACTION_TYPE::DOWN,MAZE_ACTION_TYPE::LEFT,MAZE_ACTION_TYPE::RIGHT};
+	MAZE_STATE_TYPE m_start = { 2,0 };
+	MAZE_STATE_TYPE m_goal = { 0,8 };
 	//the obstacle of the maze;
-	vector<pair<int,int>> m_obstacle = { {1, 2},{2, 2},{3, 2},{0, 7},{1, 7},{2, 7},{4, 5} };
-
+	vector<MAZE_STATE_TYPE> m_obstacle = { {1, 2},{2, 2},{3, 2},{0, 7},{1, 7},{2, 7},{4, 5} };
+	
 };
+
+
+
+#endif // !maze_h
+
 

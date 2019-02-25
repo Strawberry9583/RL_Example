@@ -16,7 +16,7 @@
 *.idb
 *.suo
 *.VC.db
-
+*.VC.opendb
 
 
 # Precompiled Headers
