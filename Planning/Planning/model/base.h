@@ -13,6 +13,7 @@ public:
 	base(base&&) = default;
 	base& operator=(const base&) = default;
 	base& operator=(base&&) = default;
+protected:
 
 private:
 

@@ -122,12 +122,14 @@
     <ClInclude Include="model\simple_model.h" />
     <ClInclude Include="problem\maze.h" />
     <ClInclude Include="problem\problem_base.h" />
-    <ClInclude Include="update_alg\td_update_base.h" />
+    <ClInclude Include="problem\random_walk.h" />
+    <ClInclude Include="update_alg\td_update.h" />
     <ClInclude Include="update_alg\updata_base.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="choose_alg\eplison_greedy.cpp" />
     <ClCompile Include="problem\maze.cpp" />
+    <ClCompile Include="problem\random_walk.cpp" />
     <ClCompile Include="run\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

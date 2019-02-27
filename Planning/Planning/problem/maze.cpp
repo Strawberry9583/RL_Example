@@ -3,10 +3,10 @@
 
 maze::maze() :problem_base<MAZE_STATE_TYPE, MAZE_ACTION_TYPE>(){
 	//ini action set;
-	m_actions.push_back(MAZE_ACTION_TYPE::UP);
-	m_actions.push_back(MAZE_ACTION_TYPE::DOWN);
-	m_actions.push_back(MAZE_ACTION_TYPE::LEFT);
-	m_actions.push_back(MAZE_ACTION_TYPE::RIGHT);
+	m_actions.push_back(MAZE_ACTION_TYPE::MAZE_ACTION_UP);
+	m_actions.push_back(MAZE_ACTION_TYPE::MAZE_ACTION_DOWN);
+	m_actions.push_back(MAZE_ACTION_TYPE::MAZE_ACTION_LEFT);
+	m_actions.push_back(MAZE_ACTION_TYPE::MAZE_ACTION_RIGHT);
 
 	//ini state set & states2actions & states2rewads;
 	for (int i = 0; i < m_height; ++i) {
@@ -34,16 +34,16 @@ maze::~maze() {
 
 pair<MAZE_STATE_TYPE,double> maze::next_state(const MAZE_STATE_TYPE& state, const MAZE_ACTION_TYPE  & action) {
 	MAZE_STATE_TYPE next_state;
-	if (action == MAZE_ACTION_TYPE::UP) {
+	if (action == MAZE_ACTION_TYPE::MAZE_ACTION_UP) {
 		 next_state=pair<int, int>(state.first-1, state.second );
 	}
-	else if (action == MAZE_ACTION_TYPE::DOWN) {
+	else if (action == MAZE_ACTION_TYPE::MAZE_ACTION_DOWN) {
 		next_state= pair<int, int>(state.first+1, state.second );
 	}
-	else if (action == MAZE_ACTION_TYPE::LEFT) {
+	else if (action == MAZE_ACTION_TYPE::MAZE_ACTION_LEFT) {
 		next_state= pair<int, int>(state.first, state.second-1 );
 	}
-	else if (action == MAZE_ACTION_TYPE::RIGHT) {
+	else if (action == MAZE_ACTION_TYPE::MAZE_ACTION_RIGHT) {
 		next_state= pair<int, int>(state.first, state.second+1 );
 	}
 	//if encountered with obstacle, then stay.
