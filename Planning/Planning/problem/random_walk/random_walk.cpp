@@ -11,7 +11,7 @@ m_states_num(states_num) {
 random_walk::~random_walk() {
 }
 
-void random_walk::initailize() {
+void random_walk::initialize() {
 	//set states;
 	m_states.resize(m_states_num);
 	iota(m_states.begin(), m_states.end(), 0);

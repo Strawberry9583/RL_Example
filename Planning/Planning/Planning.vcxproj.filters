@@ -19,6 +19,18 @@
     <Filter Include="choose_alg">
       <UniqueIdentifier>{0e62576f-53b4-4d09-97f4-e0b6457e4a7d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="problem\random_walk">
+      <UniqueIdentifier>{aeabbb11-5712-465d-8b2a-556a31e57d25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="update_alg\td_update">
+      <UniqueIdentifier>{ece8fff6-ebb3-443f-9a0f-a5c367552d8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="problem\cliff_walking">
+      <UniqueIdentifier>{1563ffe5-a442-4c98-8846-7a2c8633cea4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="problem\grid">
+      <UniqueIdentifier>{45ca4e05-6493-4b9c-8b84-6d664c5700ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="model\model_base.h">
@@ -26,9 +38,6 @@
     </ClInclude>
     <ClInclude Include="model\simple_model.h">
       <Filter>model</Filter>
-    </ClInclude>
-    <ClInclude Include="problem\maze.h">
-      <Filter>problem</Filter>
     </ClInclude>
     <ClInclude Include="definition\definition.h">
       <Filter>definition</Filter>
@@ -45,25 +54,34 @@
     <ClInclude Include="choose_alg\epsilon_greedy.h">
       <Filter>choose_alg</Filter>
     </ClInclude>
-    <ClInclude Include="update_alg\td_update.h">
-      <Filter>update_alg</Filter>
+    <ClInclude Include="problem\random_walk\random_walk.h">
+      <Filter>problem\random_walk</Filter>
     </ClInclude>
-    <ClInclude Include="problem\random_walk.h">
-      <Filter>problem</Filter>
+    <ClInclude Include="update_alg\td_update\td_update.h">
+      <Filter>update_alg\td_update</Filter>
+    </ClInclude>
+    <ClInclude Include="problem\cliff_walking\cliff_walking.h">
+      <Filter>problem\cliff_walking</Filter>
+    </ClInclude>
+    <ClInclude Include="problem\grid\grid.h">
+      <Filter>problem\grid</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="problem\maze.cpp">
-      <Filter>problem</Filter>
-    </ClCompile>
     <ClCompile Include="run\main.cpp">
       <Filter>run</Filter>
     </ClCompile>
     <ClCompile Include="choose_alg\eplison_greedy.cpp">
       <Filter>choose_alg</Filter>
     </ClCompile>
-    <ClCompile Include="problem\random_walk.cpp">
-      <Filter>problem</Filter>
+    <ClCompile Include="problem\random_walk\random_walk.cpp">
+      <Filter>problem\random_walk</Filter>
+    </ClCompile>
+    <ClCompile Include="problem\cliff_walking\cliff_walking.cpp">
+      <Filter>problem\cliff_walking</Filter>
+    </ClCompile>
+    <ClCompile Include="problem\grid\grid.cpp">
+      <Filter>problem\grid</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

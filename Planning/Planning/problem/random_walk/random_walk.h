@@ -1,21 +1,23 @@
 #ifndef  RANDOM_WALK_H
 #define random_WALK_H
 
-#include"problem_base.h"
-#include"../definition/definition.h"
+#include"../problem_base.h"
+#include"../../definition/definition.h"
 #include<vector>
 #include<string>
 #include<map>
 #include<algorithm>
 #include<iostream>
 #include<numeric>
-using namespace std;
+
+
+
 class random_walk: public problem_base<RANDOM_WALK_STATE_TYPE, RANDOM_WALK_ACTION_TYPE> {
 public:
 
-	random_walk(int states_num =7);
+	random_walk(int states_num =11);
 	~random_walk();
-	void initailize();
+	void initialize()override;
 	RANDOM_WALK_STATE_TYPE & start() { return m_start; }
 	const RANDOM_WALK_STATE_TYPE & start() const { return m_start; }
 	vector<RANDOM_WALK_STATE_TYPE> & terminal() { return m_terminal; }

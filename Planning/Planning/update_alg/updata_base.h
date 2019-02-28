@@ -8,6 +8,7 @@
 #include<map>
 #include<iostream>
 #include<vector>
+#include<set>
 
 
 template<typename state_type,typename action_type>
@@ -87,7 +88,6 @@ public:
 			for (auto & j : i->second) {
 				m_q_value[make_pair(i->first, j)] = 0.;
 			}
-			
 		}
 	}
 protected:

@@ -10,6 +10,7 @@ class problem_base: public base{
 public:
 	problem_base() = default;
 	virtual ~problem_base() {}
+	virtual void initialize() {}
 	void set_states(vector<state_type> & states) { m_states = states; }
 	vector<state_type> & states() { return m_states; }
 	const vector<state_type> & states()const { return m_states; }
@@ -17,7 +18,7 @@ public:
 	vector<action_type> & actions(){ return m_actions; }
 	const vector<action_type> & actions()const { return m_actions; }
 	void set_states2actions(map<state_type, vector<action_type> > & states2actions)
-	{	m_states2actions = states2actions;}
+	{	m_states2actions = states2actions; }
 	map<state_type, vector<action_type> > & states2actions() { return m_states2actions; }
 	const map<state_type, vector<action_type> > & states2actions()const { return m_states2actions; }
 	void set_states2reward(map<state_type, double> & states2rewards) 
