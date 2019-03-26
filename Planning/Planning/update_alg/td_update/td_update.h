@@ -17,12 +17,19 @@ public:
 		update_base<state_type, action_type>::initialize();
 	}
 
-	// on_policy TD(0) control alg. update (Sarsa)
+	// on_policy TD(0) control alg. update (Sarsa) with overloading the function: update_q;
 	void update_q(const state_type & state, const action_type & action, const state_type & next_state, 
 		const action_type & next_aciton,double r) {
 		//class template can resolve the elements of its superclass;
 		this->m_q_value[make_pair(state,action)] += this->m_learning_ratio*
 			(r+m_dicount_factor*this->m_q_value[make_pair(next_state,next_aciton)]-this->m_q_value[make_pair(state,action)]);
+	}
+
+	// off_policy TD(0) control alg. update (Q-learning) with overloading the function: update_q;
+	void update_q(const state_type & state, const action_type & action, const state_type & next_state, double r) {
+		action_type max_action = update_base<state_type,action_type>::best_action(next_state);
+		this->m_q_value[make_pair(state, action)] += this->m_learning_ratio*
+			(r + m_dicount_factor * this->m_q_value[make_pair(next_state, max_action)] - this->m_q_value[make_pair(state, action)]);
 	}
 
 	// TD(0) predication alg. for state_value;

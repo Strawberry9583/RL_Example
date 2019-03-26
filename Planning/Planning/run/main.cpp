@@ -109,6 +109,8 @@ void random_walk_td_update_v_test() {
 }
 
 void cliff_walk_sarsa_test() {
+	//ofstream ofile("./result/cliff_walking/sarsa_cliff_walking.csv");
+
 	cliff_walking cliff_problem;
 	cliff_problem.initialize();
 	td_update<GRID_STATE_TYPE, GRID_ACTION_TYPE> td;
@@ -127,7 +129,9 @@ void cliff_walk_sarsa_test() {
 			a = a_next;
 		}
 		cout << return_for_episode << endl;
+		//ofile <<i<< return_for_episode << endl;
 	}
+	//ofile.close();
 	//GRID_ACTION_TYPE a0 = GRID_ACTION_TYPE::GRID_ACTION_UP;
 	//GRID_ACTION_TYPE a1 = GRID_ACTION_TYPE::GRID_ACTION_DOWN;
 	//GRID_ACTION_TYPE a2 = GRID_ACTION_TYPE::GRID_ACTION_LEFT;
@@ -139,12 +143,32 @@ void cliff_walk_sarsa_test() {
 }
 
 void cliff_walk_q_learning_test() {
+	//ofstream ofile("./result/cliff_walking/q_learning_cliff_walking.csv");
+	cliff_walking cliff_problem;
+	cliff_problem.initialize();
+	td_update<GRID_STATE_TYPE, GRID_ACTION_TYPE> td;
+	td.initialize(cliff_problem.states2actions());
+	for (int i = 0; i < 500; ++i) {
+		double return_for_episode = 0.;
 
-
+		GRID_STATE_TYPE s = cliff_problem.start();
+		
+		while (s != cliff_problem.goal()) {
+			GRID_ACTION_TYPE a = td.epsilon_action(s, 0.1);
+			auto next = cliff_problem.next_state(s, a);
+			return_for_episode += next.second;
+			td.update_q(s, a, next.first, next.second);
+			s = next.first;
+		}
+		cout << return_for_episode << endl;
+		//ofile << i << return_for_episode << endl;
+	}
+	//ofile.close();
 }
 
 int main() {
 	cliff_walk_sarsa_test();
+	cliff_walk_q_learning_test();
 	std::cin.get();
 	return 0;
 }

@@ -9,6 +9,7 @@
 #include<iostream>
 #include<vector>
 #include<set>
+#include<fstream>
 
 
 template<typename state_type,typename action_type>
